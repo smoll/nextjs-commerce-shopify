@@ -9,6 +9,7 @@ export { default as getAllPages } from './api/get-all-pages';
 export { default as getAllProducts } from './api/get-all-products';
 export { default as getAllCollections } from './api/get-all-collections';
 export { default as getProduct } from './api/get-product';
+export { default as getSiteInfo } from './api/get-site-info';
 export { default as getConfig } from './api/config';
 
 export * from './utils/types';
