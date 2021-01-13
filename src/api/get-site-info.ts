@@ -13,8 +13,10 @@ const getSiteInfo = async (options: Options): Promise<Shop> => {
     storefrontAccessToken: token,
     domain: domain
   });
-  const shopInfo: Shop = await client.shop.fetchInfo();
-  return shopInfo;
+
+  const res = await client.shop.fetchInfo();
+
+  return JSON.parse(JSON.stringify(res));
 };
 
 export default getSiteInfo;
