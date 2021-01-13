@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 13.x
-          registry-url: "https://npm.pkg.github.com"
+          registry-url: https://npm.pkg.github.com/
+          # Defaults to the user or organization that owns the workflow file
+          scope: "@smoll"
       - run: yarn install
       - run: npm publish
         env:
