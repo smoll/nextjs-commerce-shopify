@@ -14,6 +14,6 @@ jobs:
           node-version: 13.x
           registry-url: "https://npm.pkg.github.com"
       - run: yarn install
-      - run: npm publish --access public
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
