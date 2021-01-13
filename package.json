@@ -1,5 +1,5 @@
 {
-  "name": "@smoll/nextjs-commerce-shopify",
+  "name": "nextjs-commerce-shopify",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
