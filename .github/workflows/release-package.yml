@@ -15,11 +15,6 @@ jobs:
         with:
           node-version: 13.x
           registry-url: "https://npm.pkg.github.com"
-      - run: yarn config set npmPublishRegistry 'https://npm.pkg.github.com/'
-      - run: yarn config set npmAuthToken "${{ env.NODE_AUTH_TOKEN }}"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Publish to GitHub Packages
-      - run: yarn publish
+      - run: yarn config set npmPublishRegistry 'https://npm.pkg.github.com/' && yarn config set npmAuthToken "${{ env.NODE_AUTH_TOKEN }}" && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
