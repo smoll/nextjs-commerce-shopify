@@ -9,15 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install
+      - run: yarn install
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 13.x
           registry-url: "https://npm.pkg.github.com"
-          # Defaults to the user or organization that owns the workflow file
-          scope: "@smoll"
+      - run: yarn config set npmPublishRegistry 'https://npm.pkg.github.com/'
+      - run: yarn config set npmAuthToken "$env:NODE_AUTH_TOKEN"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Publish to GitHub Packages
-      - run: npm publish
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
