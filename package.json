@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "preinstall": "[ ! -f .buildme ] || npx -p typescript tsc",
     "prepublishOnly": "yarn build"
   },
   "files": [
