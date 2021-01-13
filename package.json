@@ -1,5 +1,8 @@
 {
-  "name": "nextjs-commerce-shopify",
+  "name": "@smoll/nextjs-commerce-shopify",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "version": "1.1.0",
   "description": "Collection of hooks and data fetching functions to integrate Shopify in a React application.",
   "main": "./dist/index.js",
@@ -13,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petermekhaeil/nextjs-commerce-shopify.git"
+    "url": "git+https://github.com/smoll/nextjs-commerce-shopify.git"
   },
   "keywords": [
     "nextjs",
